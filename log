@@ -4,3 +4,16 @@ Thu Apr 30 08:01:45 PM UTC 2026:
  tests:  3|7
 total_score: 5/60
 914a106
+Thu Apr 30 08:13:50 PM UTC 2026: 
+ treemap.c | 18 ++++++++++++++++++
+ 1 file changed, 18 insertions(+)
+Compilation failed
+In file included from test.c:4:
+treemap.c: In function ‘nextTreeMap’:
+treemap.c:128:42: error: ‘TreeNode’ has no member named ‘key’
+  128 |             if(tree -> lower_than(actual -> key, parent -> key) == 1){
+      |                                          ^~
+treemap.c:128:57: error: ‘TreeNode’ has no member named ‘key’
+  128 |             if(tree -> lower_than(actual -> key, parent -> key) == 1){
+      |                                                         ^~
+bf605c1
