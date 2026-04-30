@@ -17,3 +17,9 @@ treemap.c:128:57: error: ‘TreeNode’ has no member named ‘key’
   128 |             if(tree -> lower_than(actual -> key, parent -> key) == 1){
       |                                                         ^~
 bf605c1
+Thu Apr 30 08:14:30 PM UTC 2026: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  4|7
+total_score: 8/60
+c227af5
