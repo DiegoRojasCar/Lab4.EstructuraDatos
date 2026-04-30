@@ -116,6 +116,7 @@ Pair * firstTreeMap(TreeMap * tree) {
 Pair * nextTreeMap(TreeMap * tree) {
     TreeNode * actual = tree -> current;
     if(actual -> right != NULL){
+        actual = actual -> right;
         if(actual -> left == NULL){
             return actual -> pair;
         }
