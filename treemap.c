@@ -116,8 +116,8 @@ Pair * firstTreeMap(TreeMap * tree) {
 Pair * nextTreeMap(TreeMap * tree) {
     TreeNode * actual = tree -> current;
     if(actual -> right != NULL){
-        while(actual -> right != NULL){
-            actual = actual -> right;
+        while(actual -> left != NULL){
+            actual = actual -> left;
         }
         tree -> current = actual;
         return actual -> pair;
@@ -125,7 +125,7 @@ Pair * nextTreeMap(TreeMap * tree) {
     else{
         TreeNode *parent = actual -> parent;
         while(parent != NULL){
-            if(tree -> lower_than(actual ->pair -> key, parent ->pair -> key) == 0){
+            if(tree -> lower_than(actual ->pair -> key, parent ->pair -> key) == 1){
                 tree -> current = parent;
                 return parent -> pair;
             }
