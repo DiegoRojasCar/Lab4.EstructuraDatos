@@ -125,7 +125,7 @@ Pair * nextTreeMap(TreeMap * tree) {
     else{
         TreeNode *parent = actual -> parent;
         while(parent != NULL){
-            if(tree -> lower_than(actual ->pair -> key, parent ->pair -> key) == 1){
+            if(tree -> lower_than(actual ->pair -> key, parent ->pair -> key) == 0){
                 tree -> current = parent;
                 return parent -> pair;
             }
