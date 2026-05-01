@@ -188,8 +188,8 @@ void removeNode(TreeMap * tree, TreeNode* node) {
     removeNode(tree, reemplazo);
     return;
 }
-    }
-}
+    
+
 
 void eraseTreeMap(TreeMap * tree, void* key){
     if (tree == NULL || tree->root == NULL) return;
