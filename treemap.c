@@ -102,7 +102,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
                 aux -> right = nodoNuevo;
                 tree -> current = nodoNuevo;
                 aux -> right -> parent = aux;
-                return
+                return;
             }
             aux = aux -> right;
         }
