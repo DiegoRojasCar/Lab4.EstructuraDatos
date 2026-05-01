@@ -181,3 +181,29 @@ treemap.c:256:1: error: control reaches end of non-void function [-Werror=return
       | ^
 cc1: all warnings being treated as errors
 18090d9
+Fri May  1 08:47:43 PM UTC 2026: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:4:
+treemap.c:191:5: error: expected identifier or ‘(’ before ‘}’ token
+  191 |     }
+      |     ^
+treemap.c:192:1: error: expected identifier or ‘(’ before ‘}’ token
+  192 | }
+      | ^
+treemap.c: In function ‘upperBound’:
+treemap.c:254:21: error: initialization of ‘TreeNode *’ from incompatible pointer type ‘TreeMap *’ [-Wincompatible-pointer-types]
+  254 |     TreeNode *aux = tree
+      |                     ^~~~
+treemap.c:255:5: error: expected ‘,’ or ‘;’ before ‘return’
+  255 |     return NULL;
+      |     ^~~~~~
+treemap.c:254:15: error: unused variable ‘aux’ [-Werror=unused-variable]
+  254 |     TreeNode *aux = tree
+      |               ^~~
+treemap.c:256:1: error: control reaches end of non-void function [-Werror=return-type]
+  256 | }
+      | ^
+cc1: all warnings being treated as errors
+1f874e7

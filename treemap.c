@@ -185,7 +185,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
     aux -> pair -> key = reemplazo -> pair ->key;
     aux ->pair -> value = reemplazo -> pair -> value;
 
-    remove(tree, reemplazo);
+    removeNode(tree, reemplazo);
     return;
 }
     }
