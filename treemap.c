@@ -69,7 +69,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
             nodo = nodo -> left;
         }
         else{
-            nodo = nodo -> right
+            nodo = nodo -> right;
         }
     }
     return NULL;
