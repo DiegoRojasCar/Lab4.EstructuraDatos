@@ -137,7 +137,63 @@ TreeNode * minimum(TreeNode * x){
 // Reemplace los datos (key,value) de node con los del nodo "minimum". Elimine el nodo minimum (para hacerlo puede usar la misma función removeNode).
 
 void removeNode(TreeMap * tree, TreeNode* node) {
+    if(tree -> root == NULL){
+        return;
+    }
 
+    TreeNode *aux = tree -> root;
+
+    while(aux != NULL){
+        if(is_equal(tree, node -> pair -> key, aux -> pair -> key)){
+            //sin hijos
+            if(aux -> left == NULL && aux -> right == NULL){
+                if(aux -> parent -> left == aux){
+                    aux -> parent -> left = NULL;
+                }
+                if(aux -> parent -> right == aux){
+                    aux -> parent -> right = NULL;
+                }
+                return;
+            }
+            //Un hijo
+            if(aux -> left == NULL || aux -> right == NULL ){
+                if(aux -> parent -> right == aux){
+                    if(aux -> right != NULL){
+                        aux -> parent -> right = aux -> right;
+                        aux -> right -> parent = aux -> parent;
+                    }
+                    else{
+                        aux -> parent -> right = aux -> left;
+                        aux -> left -> parent = aux -> parent;
+                    }
+                }
+                if(aux -> parent -> left == aux){
+                    if(aux -> right != NULL){
+                        aux -> parent -> left = aux -> right;
+                        aux -> right -> parent = aux -> parent;
+                    }
+                    else{
+                        aux -> parent -> left = aux -> left;
+                        aux -> left -> parent = aux -> parent;
+                    }
+                }
+                return;
+            }
+            //Dos hijo
+            TreeNode *hijoDer = aux -> right;
+            TreeNode *reemplazo = minimum(hijoDer);
+
+            aux -> pair -> key = reemplazo -> pair ->key;
+            aux ->pair -> value = reemplazo -> pair -> key;
+            return;
+        }
+        if(tree -> lower_than(node -> pair -> key, aux -> pair -> key) == 1){
+            aux = aux -> left;
+        }
+        else{
+            aux = aux -> right;
+        }
+    }
 }
 
 void eraseTreeMap(TreeMap * tree, void* key){
