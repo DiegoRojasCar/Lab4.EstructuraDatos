@@ -99,7 +99,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
         }
         else{
             if(aux->right == NULL){
-                aux -> rigt = nodoNuevo;
+                aux -> right = nodoNuevo;
                 tree -> current = nodoNuevo;
                 aux -> right -> parent = aux;
                 return
